@@ -1,0 +1,12 @@
+# 生成物：保留目录占位，忽略实际输出
+outputs/*
+!outputs/.gitkeep
+
+# 误用的单数目录（非官方 outputs/）
+output/
+
+# 内部文档目录（仅 tenp 开发用，不进 main）
+docs/
+
+# macOS
+.DS_Store
