@@ -6,6 +6,38 @@
 
 把文章里的观点、流程和隐喻，变成一张张可读的手绘配图。默认 **16:9 横版**，支持 **Gimi IP** 或 **无角色** 两种模式。
 
+## 效果预览
+
+> 图片使用 [jsDelivr](https://www.jsdelivr.com/) CDN 加速，避免国内直接拉 GitHub 原图失败。
+
+### 无角色
+
+**实践闭环**
+
+![AI 实践闭环](https://cdn.jsdelivr.net/gh/GiMi-Xiaomi/gimi-illustration-skill@v1.1/assets/none/examples/quirky-sketch/none-ai-practice-loop.png)
+
+**演示主线**
+
+![演示主线三步](https://cdn.jsdelivr.net/gh/GiMi-Xiaomi/gimi-illustration-skill@v1.1/assets/none/examples/quirky-sketch/none-ai-presentation-mainline.png)
+
+**可分享链接**
+
+![作品集分享链接](https://cdn.jsdelivr.net/gh/GiMi-Xiaomi/gimi-illustration-skill@v1.1/assets/none/examples/quirky-sketch/none-shareable-portfolio-link.png)
+
+### Gimi IP
+
+**写作避坑**
+
+![写作避坑清单](https://cdn.jsdelivr.net/gh/GiMi-Xiaomi/gimi-illustration-skill@v1.1/assets/ip/gimi/examples/quirky-sketch/gimi-writing-rules-checklist.png)
+
+**AI 改文件**
+
+![AI 改文件混乱](https://cdn.jsdelivr.net/gh/GiMi-Xiaomi/gimi-illustration-skill@v1.1/assets/ip/gimi/examples/quirky-sketch/gimi-ai-change-chaos.png)
+
+**久坐肩颈**
+
+![久坐肩颈疲劳](https://cdn.jsdelivr.net/gh/GiMi-Xiaomi/gimi-illustration-skill@v1.1/assets/ip/gimi/examples/quirky-sketch/gimi-desk-shoulder-fatigue.png)
+
 ---
 
 ## 适合谁用
@@ -107,4 +139,10 @@ Gimi IP 模式需将设定图 + 校准图放入上下文后再生图，详见 `r
 
 ---
 
-**维护者：** [@GiMi-Xiaomi](https://github.com/GiMi-Xiaomi)
+## 关于作者
+
+**Gimi（米未可）** — UX 设计师/ AI Builder
+
+用 Skill + Vibe Coding 做工作提效与内容配图。
+
+- 小红书：[米未可](https://www.xiaohongshu.com/user/profile/593a3b5033594a18f9aea21f)

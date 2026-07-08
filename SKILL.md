@@ -5,7 +5,7 @@ description: Generate quirky hand-drawn style illustrations from Chinese article
 
 # gimi-illustration · 配图 Skill
 
-> **Release v1.0** · 怪诞手绘单风格，IP：`gimi` / `none`，默认 16:9。
+> **Release v1.1** · 怪诞手绘单风格，IP：`gimi` / `none`，默认 16:9。
 
 输入文章内容，生成怪诞手绘风格配图。单风格 `quirky-sketch`，IP 为 `gimi` / `none`，默认 16:9。
 
@@ -103,4 +103,4 @@ outputs/{YYYYMMDD}-{slug}/
 
 ## 版本
 
-`v1.0` · 2026-07-08
+`v1.1` · 2026-07-08

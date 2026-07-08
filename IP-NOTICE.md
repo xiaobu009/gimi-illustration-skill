@@ -14,8 +14,6 @@
 
 **著作权人：** Gimi（© 2026 Gimi，保留所有权利）
 
-> 著作权登记可使用笔名「Gimi」或你的真实姓名，**不必写 GitHub 用户名**。GitHub 账号仅用于联系与署名，例如：`维护者：[@你的GitHub用户名](https://github.com/你的用户名)`（推送前在 README 中填写）。
-
 本声明独立于仓库根目录的 [MIT License](LICENSE)。MIT 仅适用于 Skill 的代码、文档结构与工作流程；**不授予 Gimi 角色形象的复制、改编或商业使用权。**
 
 ---
