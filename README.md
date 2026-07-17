@@ -4,7 +4,7 @@
 >
 > Skill 代码采用 [MIT License](LICENSE)；Gimi 角色形象见 [IP-NOTICE.md](IP-NOTICE.md)。
 
-把文章里的观点、流程和隐喻，变成一张张可读的手绘配图。默认 **16:9 横版**，支持 **Gimi IP** 或 **无角色** 两种模式。
+把文章里的观点、流程和隐喻，变成一张张可读的手绘配图。默认 **16:9 横版**，支持 **Gimi IP**、**无角色**，或 **自定义 IP**（录入你自己的形象）。
 
 ## 效果预览
 
@@ -47,6 +47,7 @@
 | 图文创作者 | 小红书 / 公众号 / 博客，给文章穿插配图 |
 | 职场写作者 | 汇报、方案、文档，用图提升可读性 |
 | 口播 / 演讲视觉稿 | 每张图独立传达一个观点 |
+| 自有 IP 作者 | 上传形象 → 录入为自己的配图角色 |
 
 ---
 
@@ -72,7 +73,7 @@ ln -s "$(pwd)" ~/.cursor/skills/gimi-illustration
 
 或在项目内放置：`.cursor/skills/gimi-illustration/`
 
-### 2. 使用
+### 2. 配图
 
 在对话中发送触发词 + 文章正文：
 
@@ -86,12 +87,24 @@ ln -s "$(pwd)" ~/.cursor/skills/gimi-illustration
 
 AI 会按 `SKILL.md` 工作流自动完成：理解正文 → 规划配图策略 → 组装 prompt → 调用平台生图 → QA 质检 → 保存到 `outputs/`。
 
-### 3. 常用选项（可在正文中说明）
+### 3. 自定义 IP（2.0）
+
+附上你的角色形象图，发送：
+
+```
+录入 IP
+```
+
+也可说：`自定义 IP` / `上传形象` / `新建 IP`。
+
+AI 会按 `references/ip/_template.md` 走录入流程（先确认形象方案，再设定图 / 校准图），**不会**一上来就当海报配图。完成后配图时指定你的 IP id 即可。
+
+### 4. 常用选项（可在正文中说明）
 
 | 选项 | 默认 | 说明 |
 |------|------|------|
 | 比例 | `16:9` | 可说「3:4 竖版」「小红书」等 |
-| IP | `gimi` | 马帽女孩；说「不要人物」「纯物件」→ `none` |
+| IP | `gimi` | 马帽女孩；「不要人物」→ `none`；或用你录入的 id |
 | 张数 | 自动推断 | 可说「帮我配 3 张」 |
 | 标题 | 无 | 可说「顶部加手写标题」 |
 
@@ -113,6 +126,7 @@ outputs/{YYYYMMDD}-{slug}/
 | 路径 | 作用 |
 |------|------|
 | `SKILL.md` | Skill 主入口与工作流 |
+| `references/ip/_template.md` | 自定义 IP 合约 + 录入流程（Step 0） |
 | `references/` | 风格、构图、prompt、QA、IP 协议 |
 | `assets/ip/gimi/` | Gimi 设定图与校准案例（`$IP=gimi` 时必用） |
 | `assets/none/examples/` | 无角色模式正向案例 |
@@ -125,10 +139,10 @@ Skill 负责策略与 prompt；**生图由当前 AI 平台的内置工具执行*
 
 | 平台 | 生图工具 |
 |------|----------|
-| **Codex** | `@Image Gen` / `image_gen`（推荐；Gimi IP 双参考图在此验证） |
+| **Codex** | `@Image Gen` / `image_gen`（推荐；双参考图在此验证） |
 | **Cursor** | `GenerateImage` |
 
-Gimi IP 模式需将设定图 + 校准图放入上下文后再生图，详见 `references/ip/gimi/ip.md`。
+Gimi / 自定义 IP 模式需将设定图（+ 校准图）放入上下文后再生图，详见对应 `references/ip/*/ip.md`。
 
 ---
 
@@ -141,7 +155,7 @@ Gimi IP 模式需将设定图 + 校准图放入上下文后再生图，详见 `r
 
 ## 关于作者
 
-**Gimi（米未可）** — UX 设计师/ AI Builder
+**Gimi（米未可）** — UX 设计师 / AI Builder
 
 用 Skill + Vibe Coding 做工作提效与内容配图。
 

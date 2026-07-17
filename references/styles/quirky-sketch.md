@@ -118,6 +118,46 @@ IMPORTANT style adaptation for character:
 
 > IP 专属锁色（如 Gimi 背心三色条纹）→ 读 `ip/{$IP}/ip.md`「填入 `{IP_STYLE_ADAPT}`」，组装在 `{STYLE_ADAPT}` 之后。
 
+## Step 0.4 生成（自定义 IP · 标准风格样板镜）
+
+> 仅 Step 0 校准用；**不是**配图 Step 3。细则见 `ip/_template.md`「0.4 门禁」。  
+> 对用户称「怪诞手绘」；本文件 id 仍为 `quirky-sketch`。
+
+**必须载入：** 本节 `{STYLE_DNA}` + `{STYLE_ADAPT}` + 已确认的 `reference-character.png`（全身）。
+
+**画面规格（所有自定义 IP 共用 · 写死）：**
+
+- 比例 16:9；角色全身可见（可坐姿/侧身，不必站姿）
+- 主题文案（固定）：vibe coding · IP 配图风格样板
+- 场景物件从清单取 **2–4**：笔记本电脑、杯子、绿植、简单桌面线稿
+- 白底留白 ≥ 25%；场景色纪律：软蓝主强调、橙 ≤2 点睛
+
+**校准专用 prompt 骨架：**
+
+```
+{STYLE_DNA}
+{STYLE_ADAPT}
+aspect ratio 16:9, landscape
+Match character identity to reference-character.png: <锚点关键词>
+Full-body character visible (sitting or standing ok), quirky-sketch style sample — wobbly ink lines, expressive rough sketch.
+Canonical vibe-coding style mirror scene: 2-4 objects from {laptop, mug, plant, simple desk line art}; soft blue accents, soft orange at most 2 small highlights.
+White background with generous whitespace.
+NO Chinese/English labels, NO title, NO arrows, NO numbered steps, NO shot-config story objects, NO article theme.
+NOT a writing-rules checklist, NOT a formal illustration for an article, NOT clean vector anime character sheet.
+```
+
+**Tier 提醒：** gimi 的 `gimi-writing-rules-checklist.png` 等为 **Tier 2 主题校准**（可带标注场景），**不是**自定义 IP 默认模板；自定义 IP 0.4 用本样板镜学 **线稿 + 色纪律**，不学避坑叙事标注。
+
+### 校准入库 QA（5 项）
+
+- [ ] 16:9；角色全身可见
+- [ ] canonical 场景物件 2–4；色纪律合格
+- [ ] 无标注 / 标题 / 文章主题 / shot 物件
+- [ ] 线稿质感符合本节 STYLE_DNA（非干净矢量立绘）
+- [ ] 身份像 `reference-character.png`
+
+五项全过才展示，并用用户层话术问「像吗？」；任一项不过 → 重生成，不得展示/入库。
+
 ## QA 检查项
 
 > 仅当 `$STYLE=quirky-sketch` 时加载本节。
@@ -151,4 +191,4 @@ remove orange object fills, colored label backgrounds, red-green diff fills
 
 ---
 
-`v1.7` · 2026-07-07 · 收层：IP 专属锁色归 ip 文件；风格层只保留场景色禁染服装
+`v1.9` · 2026-07-16 · Step 0.4 改为 16:9 标准风格样板镜；QA 对齐 v1.5

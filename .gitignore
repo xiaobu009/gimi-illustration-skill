@@ -5,8 +5,22 @@ outputs/*
 # 误用的单数目录（非官方 outputs/）
 output/
 
-# 内部文档目录（仅 tenp 开发用，不进 main）
+# 内部文档（不进公开发布线）
 docs/
+
+# 本地测试 IP（永不进入公开 main；作者 tenp 工作区可保留）
+assets/ip/axin/
+assets/ip/blond-boy/
+assets/ip/haaland/
+assets/ip/little-boy/
+assets/ip/messi/
+assets/ip/possum/
+references/ip/axin/
+references/ip/blond-boy/
+references/ip/haaland/
+references/ip/little-boy/
+references/ip/messi/
+references/ip/possum/
 
 # macOS
 .DS_Store

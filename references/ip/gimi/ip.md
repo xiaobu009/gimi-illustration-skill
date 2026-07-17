@@ -1,6 +1,9 @@
 # IP · Gimi（马帽女孩）
 
-> 只描述「长什么样 · 序列图怎么带读」。画风见 `styles/quirky-sketch.md`。
+> ref_mode: dual  
+> 气质：怪诞手绘里的马帽女孩，内容创作者化身  
+> 只描述「长什么样 · 序列图怎么带读」。画风见 `styles/quirky-sketch.md`。  
+> 合约与 Step 0 见 `references/ip/_template.md`（本文件为已填实例）。
 
 ---
 

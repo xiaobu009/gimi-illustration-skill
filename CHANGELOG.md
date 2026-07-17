@@ -2,6 +2,24 @@
 
 本文件记录面向用户的 **Release 版本**。
 
+## [2.0.0] — 2026-07-17
+
+### Added
+
+- **自定义 IP**：触发词 `录入 IP` / `自定义 IP` / `上传形象` / `新建 IP`
+- 公开 `references/ip/_template.md`（合约 + Step 0 录入流程）
+- SKILL 文首路由分流：录入时防 ImageGen 抢跑；半身/全身首轮统一零生图
+- 双参考协议（`ref_mode: dual | single`）、设定图全身落盘、16:9 风格样板镜校准
+
+### Changed
+
+- 配图协议层同步：prompt / quirky-sketch / gimi IP 合约字段（动作库、序列图导游等）
+- README：补充「录入 IP + 附图」onboarding
+
+### Security / Publish
+
+- 公开发布线仅含演示资产 `gimi` / `none`；测试用自定义 IP **不**进入公开仓
+
 ## [1.1.0] — 2026-07-08
 
 ### Added

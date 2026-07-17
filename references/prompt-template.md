@@ -55,19 +55,29 @@
 
 ### `{REF_IMAGE}`
 
-**`$IP` = gimi（双参考协议）：**
+**解析顺序：** 读 `references/ip/{$IP}/ip.md` 顶栏 `ref_mode`（`none` 见下）。设定图落盘后一律全身 full。
 
-1. **必传** `reference-character.png` — 锚点色、配饰、比例
-2. **必传** `assets/ip/gimi/examples/quirky-sketch/` **1 张**校准图（只校准 IP，不抄场景）：
-   - 默认 / 拿不准 → `gimi-writing-rules-checklist.png`
-   - 职场 / 久坐 / 痛点 / 环境类 → `gimi-desk-shoulder-fatigue.png`
-   - 产品界面 / 弹窗 / 功能讲解 → `gimi-exercise-modal-focus.png`
-   - AI 改文件 / 焦虑 / 有图内标题 → `gimi-ai-change-chaos.png`
-3. 两张都进上下文后再生图；prompt 开头：
+**`ref_mode: dual`（含 gimi）：**
+
+1. **必传** `assets/ip/{$IP}/reference-character.png`（全身身份锚）
+2. **必传** `assets/ip/{$IP}/examples/{$STYLE}/` 中 **1 张**校准图（锁该 IP 在 $STYLE 里的线稿质感；不抄场景叙事）
+3. 两张都进上下文后再生图；prompt 开头强调 Match BOTH references + 该 IP 锚点关键词
+4. 校准目录为空或文件缺失 → **当次按 single 处理**，并提示 lazy 补 0.4（见 `_template.md`）
+
+**`$IP` = gimi 时校准图选用**（实例细则，其它 IP 无主题表则任选/仅有一张则用那张）：
+
+- 默认 / 拿不准 → `gimi-writing-rules-checklist.png`
+- 职场 / 久坐 / 痛点 / 环境类 → `gimi-desk-shoulder-fatigue.png`
+- 产品界面 / 弹窗 / 功能讲解 → `gimi-exercise-modal-focus.png`
+- AI 改文件 / 焦虑 / 有图内标题 → `gimi-ai-change-chaos.png`
+
+gimi prompt 开头示例：
 
 ```
 Match Gimi to BOTH reference images (character sheet + sketch example): same horse hood, VERTICAL vest with deep-blue + sky-blue + warm-brown/tan stripes (NOT yellow/orange/gold on vest), pink blush, cube pendant, blue skirt, black chunky boots. Use the sketch example for line style only; do not change character identity or vest colors.
 ```
+
+**`ref_mode: single`：** 只传 `reference-character.png`；prompt 开头 Match character sheet（无 BOTH）。
 
 **`$IP` = none：** 不传角色图；质量不稳时可选 `assets/none/examples/{$STYLE}/` **1 张**风格参考：
 - 路径/步骤/循环类 → `none-ai-practice-loop.png`
@@ -75,13 +85,12 @@ Match Gimi to BOTH reference images (character sheet + sketch example): same hor
 - 情绪/改文件/AI介入类 → `none-ai-change-chaos.png`
 - 演示/工具链主线类 → `none-ai-presentation-mainline.png`
 
-**分工**：设定图 + 校准图 → IP；风格词 → 场景线稿与色纪律。禁止只传一张就当 gimi 流程完成。
+**分工**：设定图 + 校准图 → IP；风格词 → 场景线稿与色纪律。禁止在 dual 下只传一张却声称完成。
 
 ### `{IP_DESC}`
 
-- Gimi → 读 `ip/gimi/ip.md`「填入 `{IP_DESC}`」段落
-- none → 读 `ip/none.md`
-- 自定义 IP（v2.0）→ 读 `ip/{name}/ip.md`
+- `$IP=none` → 读 `ip/none.md`
+- 其它 → 读 `ip/{$IP}/ip.md`「填入 `{IP_DESC}`」（含 gimi 与自定义）
 
 ### `{IP_STYLE_ADAPT}`
 
