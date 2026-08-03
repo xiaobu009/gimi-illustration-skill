@@ -1,8 +1,7 @@
 # IP · Gimi（马帽女孩）
 
-> ref_mode: dual  
 > 气质：怪诞手绘里的马帽女孩，内容创作者化身  
-> 只描述「长什么样 · 序列图怎么带读」。画风见 `styles/quirky-sketch.md`。  
+> 只描述「长什么样 · 序列图怎么带读」。画风见 `styles/{$STYLE}.md`（默认 quirky-sketch；亦支持 warm-storybook / product-proposal）。
 > 合约与 Step 0 见 `references/ip/_template.md`（本文件为已填实例）。
 
 ---
@@ -12,16 +11,18 @@
 | 图 | 路径 | 作用 |
 |----|------|------|
 | **设定图** | `assets/ip/gimi/reference-character.png` | 锚点色、配饰、比例 |
-| **校准图** | `assets/ip/gimi/examples/quirky-sketch/` 按主题选 1 张 | sketch 里正确的 Gimi（见下） |
+| **校准图** | `assets/ip/gimi/examples/{$STYLE}/` 选 1 张 | 该风格下仍像同一人（见下） |
 
-**双参考协议（$IP=gimi 默认）：**
+**双参考分工（$IP=gimi）：**
 
-1. 每次生图传 **设定图 + 校准图 1 张**（共 2 张）
-2. 设定图管锚点色；校准图管「手绘线稿里仍像同一人」
-3. 校准图**不**承担构图/标注示范——那些由 shot-config 当次决定
-4. prompt 开头：`Match Gimi to BOTH references — same hood, VERTICAL vest with deep-blue + sky-blue + warm-brown stripes (NOT yellow/orange on vest), blush, cube pendant, skirt, boots.`
+1. 正式配图传 **设定图 + 当前 `$STYLE` 校准图 1 张**（共 2 张）；当前风格校准尚未确认时，只能 lazy 补本风格校准，不得用 `examples/quirky-sketch/` 充当另一种风格的双参考桥，也不得降级交付
+2. 设定图管锚点色与 **chibi 比例**；校准图管「本风格渲染下仍像同一人」
+3. 校准图不抄场景或构图；场景规则只读当前 `styles/{$STYLE}.md`
+4. prompt 开头：`Match Gimi to BOTH references — chibi proportions, same hood, VERTICAL vest with deep-blue + sky-blue + warm-brown stripes (NOT yellow/orange on vest, NOT horizontal), blush, cube pendant, skirt, boots.`
 
-**按主题选校准图**（拿不准 → `gimi-writing-rules-checklist.png`）：
+**按姿势 / 主题选校准图（全 `$STYLE` 共用）：**
+
+> 下列文件名在每个已校准风格目录中保持一致：`assets/ip/gimi/examples/{$STYLE}/<file>`。新增风格只补同名图片，不新增本表行。拿不准时选 `gimi-writing-rules-checklist.png`。
 
 | 选用时机 | 文件 |
 |---------|------|
@@ -30,7 +31,7 @@
 | 产品界面 / 弹窗 / 功能讲解 | `gimi-exercise-modal-focus.png` |
 | AI 改文件 / 焦虑 / 有图内标题 | `gimi-ai-change-chaos.png` |
 
-完整说明见 `assets/ip/gimi/examples/quirky-sketch/README.md`。
+**批内一致性（全 `$STYLE` 必检）：** 同批多图时，头身比与脸龄须与**当次所选该风格校准图**同档；漂移 → 换更近姿势/主题的校准重试，不得只靠加 prompt 词糊弄。风格的背景、线条、色块、空间和文字处理仍以当前 style 文件为准，不从 Gimi 主题表推断。
 
 ---
 
@@ -75,14 +76,14 @@ dark-blue V-neck and armhole rib trim, warm-brown/tan hem band,
 blue short skirt (NOT shorts), brown cube pendant necklace on cord,
 black chunky lace-up platform boots.
 Vest stripe colors must match character sheet exactly — NOT yellow, NOT orange, NOT gold, NOT gray on vest; scene accent colors must NOT bleed into clothing.
-Keep exact colors and proportions from the character reference; only outlines become sketchy.
+Keep exact colors and proportions from the character reference; render line quality, medium, and scene treatment according to the current style.
 ```
 
 ---
 
 ## 填入 `{IP_STYLE_ADAPT}`
 
-> quirky-sketch 下、$IP=gimi 时追加在 `{STYLE_ADAPT}` 之后。其它 IP 若无此节则留空。
+> 任意 `$STYLE` 下、$IP=gimi 时追加在 `{STYLE_ADAPT}` 之后。其它 IP 若无此节则留空。
 
 ```
 Gimi-specific color lock:

@@ -7,20 +7,33 @@ output/
 
 # 内部文档（不进公开发布线）
 docs/
+AGENTS.md
 
-# 本地测试 IP（永不进入公开 main；作者 tenp 工作区可保留）
+# 本地会话 / 工具残留（不进公开发布线）
+.superpowers/
+
+# 本地测试 / 非公开 IP（永不进入公开 main）
 assets/ip/axin/
 assets/ip/blond-boy/
 assets/ip/haaland/
 assets/ip/little-boy/
 assets/ip/messi/
 assets/ip/possum/
+assets/ip/abstract-boy/
+assets/ip/line-dog/
+assets/ip/kate-cat/
+assets/ip/pudding-pup/
 references/ip/axin/
 references/ip/blond-boy/
 references/ip/haaland/
 references/ip/little-boy/
 references/ip/messi/
 references/ip/possum/
+references/ip/abstract-boy/
+references/ip/line-dog/
+references/ip/kate-cat/
+references/ip/pudding-pup/
+references/styles/_template.md
 
 # macOS
 .DS_Store

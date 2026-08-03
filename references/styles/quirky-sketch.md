@@ -1,5 +1,11 @@
 # Style · Quirky Sketch（怪诞手绘）
 
+> id: `quirky-sketch`  
+> display_name: 怪诞手绘  
+> tagline: 白底线稿，软蓝点睛，像编辑部手绘涂鸦  
+> aliases: 怪诞手绘, quirky, 线稿涂鸦  
+> preview: （可空）
+
 > 当前默认风格预设。定义「怎么画」，不定义「画谁」。
 
 ---
@@ -10,7 +16,7 @@
 
 ## 画法
 
-**线条** — 粗细不均、带抖动感、可不封口；不矢量、不厚重描边
+**线条** — 全图（含 IP 角色与场景物件）粗细不均、带抖动感、可不封口；不矢量、不厚重描边。角色可以因构图层级略有轻重差，但不保留设定图的绝对线宽；只有用户明确的画法例外才覆盖本条。
 
 **背景与留白**
 
@@ -29,7 +35,7 @@
 
 | 层 | 规则 |
 |----|------|
-| **IP 角色** | 锚点色跟 **当次 IP 设定图**（读 `ip/{$IP}/ip.md`）；线条可 sketchy，**颜色不减、不被场景色染色** |
+| **IP 角色** | 锚点色跟 **当次 IP 设定图**（读 `ip/{$IP}/ip.md`）；线条粗细、笔触与闭合方式跟随本风格，**颜色不减、不被场景色染色**；仅用户明确画法例外才覆盖 |
 | **场景物件** | 线稿为主；**软蓝主强调** + **软橙可选 ≤2 处点睛**（见「场景色纪律」） |
 
 **场景色纪律**
@@ -68,7 +74,11 @@
 - 复杂背景、渐变、阴影、纹理
 - 在图上写结构类型名称
 
-## 留白指令（填入 `{WHITESPACE_DESC}`）
+## 疏密与背景指令（填入 `{SPACE_DESC}`）
+
+## 留白指令（填入 `{WHITESPACE_DESC}` · 别名）
+
+> 以下英文块同时填入 `{SPACE_DESC}` 与 `{WHITESPACE_DESC}`。
 
 ```
 subject occupies 50-75% of frame, at least 25% white space,
@@ -111,19 +121,20 @@ no gradient, no cute cartoon, no colored label backgrounds, no large color-fille
 ```
 IMPORTANT style adaptation for character:
 - Keep ALL identity anchors (clothing, accessories, colors, proportions) exactly as defined in the IP file and reference images
-- Only change outline quality to wobbly sketch; do NOT change colors, proportions, or outfit items
+- Apply quirky-sketch line weight, wobbly texture, open-contour behavior, and black ink treatment to BOTH character and scene; do not preserve the character sheet's absolute stroke thickness or source medium
+- Only an explicit {IP_STYLE_EXCEPTION} from the user may override a stated line or medium rule; do not infer an override from the reference image or ordinary IP description
 - Scene soft-blue and soft-orange accents apply to OBJECTS ONLY — must NOT tint, replace, or bleed into character clothing or accessories
 - Scene objects: black line art; soft blue main accents on 1-4 objects; soft orange at most 2 small highlights only
 ```
 
-> IP 专属锁色（如 Gimi 背心三色条纹）→ 读 `ip/{$IP}/ip.md`「填入 `{IP_STYLE_ADAPT}`」，组装在 `{STYLE_ADAPT}` 之后。
+> IP 专属锁色等补充 → 读 `ip/{$IP}/ip.md` 的 `{IP_STYLE_ADAPT}`；仅用户明确指定时再读「用户指定画法例外」，组装在 `{STYLE_ADAPT}` 之后。
 
 ## Step 0.4 生成（自定义 IP · 标准风格样板镜）
 
 > 仅 Step 0 校准用；**不是**配图 Step 3。细则见 `ip/_template.md`「0.4 门禁」。  
 > 对用户称「怪诞手绘」；本文件 id 仍为 `quirky-sketch`。
 
-**必须载入：** 本节 `{STYLE_DNA}` + `{STYLE_ADAPT}` + 已确认的 `reference-character.png`（全身）。
+**必须载入：** 本节 `{STYLE_DNA}` + `{STYLE_ADAPT}` + `IP_DESC` / `{IP_STYLE_ADAPT}` + 仅用户明确指定时的 `{IP_STYLE_EXCEPTION}` + 已确认的 `reference-character.png`（全身）。
 
 **画面规格（所有自定义 IP 共用 · 写死）：**
 
@@ -135,8 +146,11 @@ IMPORTANT style adaptation for character:
 **校准专用 prompt 骨架：**
 
 ```
+{IP_DESC}
 {STYLE_DNA}
 {STYLE_ADAPT}
+{IP_STYLE_ADAPT}
+{IP_STYLE_EXCEPTION}
 aspect ratio 16:9, landscape
 Match character identity to reference-character.png: <锚点关键词>
 Full-body character visible (sitting or standing ok), quirky-sketch style sample — wobbly ink lines, expressive rough sketch.
@@ -146,7 +160,7 @@ NO Chinese/English labels, NO title, NO arrows, NO numbered steps, NO shot-confi
 NOT a writing-rules checklist, NOT a formal illustration for an article, NOT clean vector anime character sheet.
 ```
 
-**Tier 提醒：** gimi 的 `gimi-writing-rules-checklist.png` 等为 **Tier 2 主题校准**（可带标注场景），**不是**自定义 IP 默认模板；自定义 IP 0.4 用本样板镜学 **线稿 + 色纪律**，不学避坑叙事标注。
+**Tier 提醒：** 带标注场景的主题校准图属于 **Tier 2 主题校准**，**不是**自定义 IP 默认模板；自定义 IP 0.4 用本样板镜学 **线稿 + 色纪律**，不学避坑叙事标注。
 
 ### 校准入库 QA（5 项）
 
@@ -154,7 +168,7 @@ NOT a writing-rules checklist, NOT a formal illustration for an article, NOT cle
 - [ ] canonical 场景物件 2–4；色纪律合格
 - [ ] 无标注 / 标题 / 文章主题 / shot 物件
 - [ ] 线稿质感符合本节 STYLE_DNA（非干净矢量立绘）
-- [ ] 身份像 `reference-character.png`
+- [ ] 身份像 `reference-character.png`；角色线条符合怪诞手绘，只有用户明确画法例外才额外检查
 
 五项全过才展示，并用用户层话术问「像吗？」；任一项不过 → 重生成，不得展示/入库。
 
@@ -191,4 +205,4 @@ remove orange object fills, colored label backgrounds, red-green diff fills
 
 ---
 
-`v1.9` · 2026-07-16 · Step 0.4 改为 16:9 标准风格样板镜；QA 对齐 v1.5
+`v2.1` · 2026-07-27 · 角色与场景共同遵循怪诞手绘线条；仅用户明确例外覆盖

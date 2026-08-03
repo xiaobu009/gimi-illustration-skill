@@ -2,6 +2,28 @@
 
 本文件记录面向用户的 **Release 版本**。
 
+## [3.0.0] — 2026-08-03
+
+### Added
+
+- **多风格**：正式公开三套可选风格
+  - 怪诞手绘（`quirky-sketch`，默认）
+  - 暖调绘本（`warm-storybook`）
+  - 产品方案（`product-proposal`）
+- 公开 `references/visual-promise.md`（视觉承诺 SSOT）
+- `gimi` / `none` 三风格校准样板进入发布包
+- README：自然语言选风格说明与三风格效果预览
+
+### Changed
+
+- 配图协议同步：prompt / shot-config / QA / IP 合约适配多风格与双参考 / 无 IP style-single
+- 无角色样板文件名统一为四件套命名（`none-change-chaos` 等）
+
+### Security / Publish
+
+- 仍不公开 `references/styles/_template.md`（不承诺用户自建风格）
+- 公开发布线仅含演示资产 `gimi` / `none`；测试用自定义 IP **不**进入公开仓
+
 ## [2.0.0] — 2026-07-17
 
 ### Added
